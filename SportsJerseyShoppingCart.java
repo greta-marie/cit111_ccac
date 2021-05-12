@@ -77,10 +77,13 @@ public class SportsJerseyShoppingCart {
         } 
     }//close printJerseys
     public static void computeShoppingCartTotal(){
+        double grandTotal = 0;
+        
          for(int c = 0; c < jerseys.length; c = c + 1){
-       System.out.println("Jerseys at index " + c + ":" + jerseys[c]);
-       
-        } 
+       System.out.println("Jerseys at index " + c + ":" + jerseys[c].getTotal());
+       grandTotal = grandTotal + jerseys[c].getTotal();
+        } //close for loop
+         System.out.println("Your Shopping Cart Total Is: $" + grandTotal);
     }
 }//close class
 
