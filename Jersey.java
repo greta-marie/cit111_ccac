@@ -14,10 +14,12 @@ public class Jersey {
     private double price;
     private int numPurchased;
     private double total;
-    public Jersey(String n){
-    name = n;
-    
-}
+
+    public Jersey(String n) {
+        name = n;
+
+    }
+
     public Jersey(String itemName, double itemPrice, int numPurchased) {
         name = itemName;
         price = itemPrice;
@@ -38,30 +40,28 @@ public class Jersey {
     public int getQuantity() {
         return numPurchased;
     }
-    public void setPrice(double p){
+
+    public void setPrice(double p) {
         //Assign to this objects member variable price 
         //what's passed in 
         price = p;
-        
+
     }
-    public void setQuantity(int n){
+
+    public void setQuantity(int n) {
         numPurchased = n;
     }
-    public void getTotal(){
-       
+
+    public double getTotal() {
+        total = numPurchased * price;
+        return total;
     }
-    
+
     public String toString() {
         NumberFormat fmt = NumberFormat.getCurrencyInstance();
         String strTab = name.length() > 8 ? "\t" : "\t\t";
         return name + strTab + fmt.format(price) + "\t\t" + numPurchased + "\t\t" + fmt.format(price * numPurchased
         );
     }
-    public static void shoppingCartTotal(){
-    
-        
-    }
-    
-    
 
 }
